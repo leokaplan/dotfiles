@@ -2,7 +2,7 @@
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-
+sudo aptitude install exuberant-ctags
 mkdir ~/.vim
 touch ~/.vimrc
 touch ~/.bashrc
