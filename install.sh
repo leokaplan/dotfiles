@@ -2,14 +2,22 @@
 
 sudo aptitude install exuberant-ctags
 git submodule foreach git pull 
-read -p "is ok to change your terminal profile? " -n 1 -r
+read -p "is it ok to change your terminal profile? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   terminal-solarized/install.sh 
 fi
-mkdir ~/.vim
-touch ~/.vimrc
-touch ~/.bashrc
+read -p "is it ok to overwrite your .vim and .vimrc? " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  rm ~/.vim -r
+  rm ~/.vimrc
 ln -s /vim ~/.vim
 ln -s /vim/vimrc ~/.vimrc
-ln -s /bash/bashrc ~/.bashrc
+fi
+read -p "is it ok to overwrite your .bashrc? " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  rm ~/.bashrc
+  ln -s /bash/bashrc ~/.bashrc
+fi
