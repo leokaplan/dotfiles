@@ -12,7 +12,7 @@ read -p "is it ok to overwrite your .vim and .vimrc? " -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  rm ~/.vim -r
+  rm ~/.vim -rf
   rm ~/.vimrc
 ln -s /vim ~/.vim
 ln -s /vim/vimrc ~/.vimrc
