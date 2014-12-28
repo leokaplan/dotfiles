@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo aptitude install exuberant-ctags
-git submodule foreach git pull 
+git submodule update --init --recursive 
 read -p "is it ok to change your terminal profile? " -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
