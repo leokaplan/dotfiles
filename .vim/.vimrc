@@ -1,4 +1,5 @@
-execute pathogen#infect()
+call pathogen#infect()
+set nocompatible
 syntax on
 filetype plugin indent on
 au BufNewFile,BufRead,BufReadPost *.ceu set syntax=ceu
