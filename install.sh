@@ -14,13 +14,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   rm ~/.vim -rf
   rm ~/.vimrc
-ln -s /vim ~/.vim
-ln -s /vim/vimrc ~/.vimrc
+  ln -s ~/dotfiles/.vim ~/.vim
+  ln -s ~/dotfiles/.vim/.vimrc ~/.vimrc
 fi
 read -p "is it ok to overwrite your .bashrc? " -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   rm ~/.bashrc
-  ln -s /bash/bashrc ~/.bashrc
+  ln -s ~/dotfiles/.bash/.bashrc ~/.bashrc
 fi
