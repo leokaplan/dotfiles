@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo aptitude install exuberant-ctags
+sudo apt install exuberant-ctags vim-gui-common vim-runtime
 git submodule update --init --recursive 
 read -p "is it ok to change your terminal profile? " -r
 echo
@@ -14,13 +14,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   rm ~/.vim -rf
   rm ~/.vimrc
-  ln -s ~/dotfiles/.vim ~/.vim
-  ln -s ~/dotfiles/.vim/.vimrc ~/.vimrc
+  ln -s $PWD/.vim ~/.vim
+  ln -s $PWD/.vim/.vimrc ~/.vimrc
 fi
 read -p "is it ok to overwrite your .bashrc? " -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   rm ~/.bashrc
-  ln -s ~/dotfiles/.bash/.bashrc ~/.bashrc
+  ln -s $PWD/.bash/.bashrc ~/.bashrc
 fi
